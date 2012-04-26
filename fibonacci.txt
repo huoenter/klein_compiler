@@ -1,0 +1,27 @@
+// A simple Klein program that prints out the values
+// of the Fibonacci sequence less than a given max value.
+// used to test the scanner
+
+// Version 1.1
+// Author: Keisha Harthoorn
+
+main(max : integer) : boolean
+	fibonacci(4147483647, 1, max)
+
+fibonacci(hi : integer, lo : integer, max : integer) : boolean
+	if hi < max then
+		fibhelper(hi, lo, max)
+	else
+		fibprinter(lo)
+	endif
+
+
+fibhelper(hi : integer, lo : integer, max : integer) : boolean
+	print(lo, hi)
+	// location marker
+	fibonacci(hi + lo, hi, max)
+
+
+fibprinter(val : integer) : boolean
+	print(val)
+	true

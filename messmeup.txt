@@ -1,0 +1,9 @@
+main(n :integer) : boolean
+	testnum(n)
+
+testnum(m:integer) : boolean
+	if m < -4294967296 then
+		true
+	else
+		false
+	endif

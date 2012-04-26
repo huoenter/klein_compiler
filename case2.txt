@@ -1,0 +1,5 @@
+main() : integer
+	if 3 < 5 then
+		1
+	else
+		2 

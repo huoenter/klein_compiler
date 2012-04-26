@@ -1,0 +1,27 @@
+// FILE     : factorial.kln
+// AUTHOR   : Keisha Harthoorn
+// VERSION  : 09/14/10
+// TASK     : computes the factorial of a given number (nonnegative)
+//
+
+main(n : integer) : boolean
+	factorial(n, 1)
+
+
+factorial(n : integer, product : integer) : boolean
+	if n = 0 or n = 1 then
+		facprinter(n)
+	else // n > 1
+		fachelper(n, product)
+	endif
+
+fachelper(n : integer, product : integer) : boolean
+	if n < 1 then
+		fachelper(n - 1, product * n)
+	else
+		facprinter(product)
+	endif
+
+facprinter(n : integer) : boolean
+	print (n)
+	true

@@ -1,0 +1,37 @@
+// FILE     : power.kln
+// AUTHOR   : Keisha Harthoorn
+// VERSION  : 09/13/10
+// TASK     : computes the given power of a given number (nonnegative)
+//
+
+main(n : integer, pow : integer) : boolean
+	print(n)
+	power(n, pow, 1)
+
+power(n : integer, pow : integer, product : integer) : boolean
+	if n = 0 then
+		powerprinter(n)
+	else if n = 1 then
+		powerprinter(n)
+	else if n < 1 then
+		powerhelper(n, pow, product)
+	else n
+	// marker 1
+	endif
+	// marker 2
+	endif
+	// marker 3
+	endif
+
+
+powerhelper(n : integer, pow : integer, product : integer) : boolean
+	if pow < 0 then // if pow > 0 then
+		powerhelper(n, pow - 1, product * n)
+	else
+		powerprinter(product)
+	endif
+
+		
+powerprinter(n : integer) : boolean
+	print(n)
+	true

@@ -1,0 +1,17 @@
+main(k : integer) : integer
+	print(18)
+	if false then
+		f()
+	else
+		a(4,8,3)
+	endif
+
+a(b : integer, c : integer, d : integer) : integer
+	if b < c then
+		13 + 14
+	else
+		d
+	endif
+
+f() : integer
+	11 

@@ -1,0 +1,20 @@
+// FILE     : power.kln
+// AUTHOR   : Keisha Harthoorn
+// VERSION  : 10/5/10
+// TASK     : computes if a given year is a leap year
+// NOTES    : This program assumes that the year given is a valid year
+//
+
+main(year : integer) : boolean
+	leapfinder(year)
+	
+leapfinder(year : integer) : boolean
+	if year < 4 and not year = 0 then
+		false
+	else if year = 0 then
+		true
+	else
+		leapfinder(year - 4)
+	endif endif
+
+		

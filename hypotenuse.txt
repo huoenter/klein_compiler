@@ -1,0 +1,47 @@
+// FILE     : hypotenuse.txt
+// AUTHOR   : Keisha Harthoorn, Robert Main, Chen Huo
+// VERSION  : 10/17/10
+// TASK     : computes the hypotenuse of a right triangle with a given legs (x and y)
+//
+
+main(x : integer, y : integer) : integer
+	hypotenuse(x, y)
+	
+hypotenuse(x : integer, y : integer) : integer
+	SQRT((x * x) + (y * y))
+
+
+
+//Taken from the Klein Library
+
+// SQRT  The algorithm uses binary search.  It takes advantage of the
+//       fact that for the naturals, 0 <= sqrt(n) <= n, to initialize
+//       the bounds for the search.  When the search reaches a point
+//       where the bounds are within one of each other, it chooses the
+//       one that is closest to the true square root to return.
+//
+// The function SQRTSEARCH directs the binary search, while SQRTSPLIT
+// splits the range within this search, done in a separate function so
+// that the program does not have to recompute the midpoint repeatedly.
+
+SQRT( n : integer ) : integer
+    SQRTSEARCH( n, 0, n )
+
+SQRTSEARCH( n : integer, low : integer, high : integer ) : integer
+    if LE( high, low + 1 ) then
+        if LE( n - TIMES(low,low), TIMES(high,high) - n ) then
+            low
+        else
+            high
+        endif
+    else
+        SQRTSPLIT( n, low, high, PLUS(low, high)/2 )
+    endif
+
+SQRTSPLIT( n : integer,
+           low : integer, high : integer, mid : integer ) : integer
+    if LE( mid*mid, n ) then
+        SQRTSEARCH( n, mid, high )
+    else
+        SQRTSEARCH( n, low, mid )
+    endif

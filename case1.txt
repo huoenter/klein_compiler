@@ -1,0 +1,16 @@
+main() : integer
+	if true then
+		f()
+	else
+		a(8,2,1)
+	endif
+
+a(b : integer, c : integer, d : integer) : integer
+	if true then
+		c
+	else
+		d
+	endif
+
+f() : integer
+	11 
